@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -22,18 +23,27 @@ public class SeleniumPracticeClass1 {
 	WebDriver driver = new ChromeDriver();
 	driver.manage().window().maximize();
 	driver.manage().timeouts().pageLoadTimeout(6000l, TimeUnit.SECONDS);
-	driver.manage().timeouts().implicitlyWait(3000l, TimeUnit.SECONDS);
+	driver.manage().timeouts().implicitlyWait(3000l, TimeUnit.SECONDS);//dynamic wait
 	driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+	/*String actual = driver.getTitle();
+	String expected = "Practice Page";
+	Assert.assertEquals(actual,expected);
 	System.out.println(driver.getTitle());	
+	
 	//driver.navigate();             //this method didn't give any time for loading the URL page
 
 	driver.findElement(By.xpath("(//input[@name='radioButton'])[2]")).click();//index number follow
+	boolean bb = driver.findElement(By.xpath("(//input[@name='radioButton'])[2]")).isSelected();
+	Assert.assertTrue(bb);
+	/*while (bb) {
+		System.out.println("The button has been selected");
+	}*/
 	
-	driver.findElement(By.id("autocomplete")).clear();
+	
+	/*driver.findElement(By.xpath("//input[@id='autocomplete']")).clear();
 	//Thread.sleep(3000);
-	driver.findElement(By.id("autocomplete")).sendKeys("South Korea");
-	Thread.sleep(3000);
-	driver.findElement(By.id("autocomplete")).clear();
+	driver.findElement(By.xpath("//input[@id='autocomplete']")).sendKeys("South Korea");
+	//css---input[id='autocomplete']    //
 	WebElement s = driver.findElement(By.xpath("//select[@id='dropdown-class-example']"));
 	
 	Select select = new Select(s);
@@ -57,8 +67,17 @@ public class SeleniumPracticeClass1 {
 	Thread.sleep(3000);
 	WebElement sdd = driver.findElement(By.xpath("//*[contains(text(),'Reload')]"));
 	action.moveToElement(sdd).click().perform();  //for more function, we use perform method
-	driver.quit();
-
+	Thread.sleep(3000);
+	WebElement sddd = driver.findElement(By.xpath("//a[text()='Contact info']"));
+	action.moveToElement(sddd).perform();*/
+	Thread.sleep(3000);
+	driver.findElement(By.xpath("//*[text()='Open Window']")).click();
+	
+	
+	
+	Thread.sleep(3000);
+	//driver.quit();//closed all windows those are opened by selenium browser
+driver.close();   //closed the current window 
 	}
 
 }

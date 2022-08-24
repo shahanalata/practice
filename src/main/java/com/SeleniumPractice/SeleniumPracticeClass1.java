@@ -2,6 +2,8 @@ package com.SeleniumPractice;
 
 
 
+import java.util.Iterator;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -72,12 +74,29 @@ public class SeleniumPracticeClass1 {
 	action.moveToElement(sddd).perform();*/
 	Thread.sleep(3000);
 	driver.findElement(By.xpath("//*[text()='Open Window']")).click();
+	//driver.getWindowHandle()//this method control go to parent url
+	Set<String>window=driver.getWindowHandles();     //this method control all open window,bundle by handles
+	Iterator<String> it = window.iterator();//generecity declare-String
+	 String parent = it.next();            //In Iterator class ha 2 method-next(),Has next(use loop);
+	 String child = it.next();
+	 driver.switchTo().window(child);
+	 String childtitle = driver.getTitle();
+	 System.out.println(childtitle);
+	Assert.assertEquals(childtitle,"QA Click Academy | Selenium,Jmeter,SoapUI,Appium,Database testing,QA Training Academy");
+	driver.switchTo().window(parent);
+	String parenttitle = driver.getTitle();
+	System.out.println(parenttitle);
+	Assert.assertEquals(parenttitle, "Practice Page");
 	
+	while (it.hasNext()) {
+		
+		
+	}
 	
 	
 	Thread.sleep(3000);
-	//driver.quit();//closed all windows those are opened by selenium browser
-driver.close();   //closed the current window 
+	//driver.quit();//closed all browser windows those are opened by selenium 
+      driver.close();   //closed the current window 
 	}
 
 }

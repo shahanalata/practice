@@ -75,9 +75,9 @@ public class SeleniumPracticeClass1 {
 	Thread.sleep(3000);
 	driver.findElement(By.xpath("//*[text()='Open Window']")).click();
 	//driver.getWindowHandle()//this method control go to parent url
-	Set<String>window=driver.getWindowHandles();     //this method control all open window,bundle by handles
+	Set<String>window=driver.getWindowHandles(); //this method control all open window,bundle by handles
 	Iterator<String> it = window.iterator();//generecity declare-String
-	 String parent = it.next();            //In Iterator class ha 2 method-next(),Has next(use loop);
+	 String parent = it.next();            //In Iterator class has 2 method-next(),Has next(use loop);
 	 String child = it.next();
 	 driver.switchTo().window(child);
 	 String childtitle = driver.getTitle();

@@ -27,12 +27,12 @@ public class FlipcartPractice {
 		                                                                       //return list of webelement;
 		
 		for (int i=0;i<totalList.size();i++) {
-			//totallist.get(i).getText();
-		      System.out.println(totalList.get(i).getText());    
+			//totalList.get(i).getText();
+		      System.out.println(totalList.get(i).getText());   
 		     if (totalList.get(i).getText().equalsIgnoreCase("iphone 13 pro")){
-		    	  totalList.get(i).click();
+		    	 totalList.get(i).click();
 		      }      
-				}
+				
 		Thread.sleep(3000);
 		driver.quit();
 		//if we can inspect any pop-up /alert, we can close it by selenium;
@@ -44,4 +44,5 @@ public class FlipcartPractice {
 		
 	}
 
+	}
 }

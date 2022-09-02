@@ -24,12 +24,13 @@ public class Bootstrap {
 List <WebElement> list = driver.findElements(By.xpath("//ul[contains(@class,'multiselect')]//li"));
 		
 		for (int i=0;i<list.size();i++) {
-			System.out.println(list.get(i).getText());
+			System.out.println(list.get(i).getText());}
 //		list.get(i).click();;
 //			if (list.get(i).getText().equalsIgnoreCase("java")) {
 //				list.get(i).click();
-		}
-
+		//	!----is not
+		
+		for (int i=0;i<list.size();i++)
 			if (list.get(i).getAttribute("class").equalsIgnoreCase("active")){
 				System.out.println(list.get(i).getText());
 			}else {
@@ -45,4 +46,5 @@ List <WebElement> list = driver.findElements(By.xpath("//ul[contains(@class,'mul
 
 	}
 
-}
+	}
+

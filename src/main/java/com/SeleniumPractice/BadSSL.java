@@ -9,7 +9,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 
-public class SeleniumClass2 {
+public class BadSSL {
 
 	public static void main(String[] args) throws InterruptedException {
 		

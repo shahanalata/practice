@@ -46,6 +46,8 @@ public class SeleniumPracticeClass1 {
 	//Thread.sleep(3000);
 	driver.findElement(By.xpath("//input[@id='autocomplete']")).sendKeys("South Korea");
 	//css---input[id='autocomplete']    //
+	 //dropdown
+	 */
 	WebElement s = driver.findElement(By.xpath("//select[@id='dropdown-class-example']"));
 	
 	Select select = new Select(s);
@@ -53,12 +55,15 @@ public class SeleniumPracticeClass1 {
 	select.selectByVisibleText("Option2");
 	
 	driver.findElement(By.xpath("//input[@id='checkBoxOption2']")).click();
+	
+	//alerthandle
 	Thread.sleep(3000);
 	driver.findElement(By.xpath("//input[@value='Alert']")).click();
 	Thread.sleep(3000);
 	driver.switchTo().alert().accept();
 	//String text = driver.switchTo().alert().getText();
 	//System.out.println("I am from alert:  "+ text);
+	//MouseHover
 	Thread.sleep(3000);
     WebElement sd = driver.findElement(By.xpath("//*[text()='Mouse Hover']"));
 	JavascriptExecutor js = (JavascriptExecutor)driver;

@@ -1,4 +1,4 @@
-package com.SeleniumPractice;
+apackage com.SeleniumPractice;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;

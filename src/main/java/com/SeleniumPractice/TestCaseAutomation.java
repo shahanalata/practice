@@ -22,11 +22,14 @@ public class TestCaseAutomation {
 		driver.manage().timeouts().pageLoadTimeout(6000l, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(3000l, TimeUnit.SECONDS);//dynamic wait
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+		
 		//drop-down example
 		WebElement ss = driver.findElement(By.xpath("//select[@id='dropdown-class-example']"));
 		Select select = new Select(ss);
 		Thread.sleep(3000l);
 		select.selectByVisibleText("Option2");
+		
+		
 		//open tab example
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//a[@id='opentab']")).click();
